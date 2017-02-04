@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<scenes>
+    <scene name="Scene_Street" image="Scene_Street" audioClip="">
+        <story>You awake and rise in the narrow back alley that you call home.</story>
+        <options>
+            <option loads="Scene_Village-Center">{1} Go to town center.</option>
+            <option loads="Scene_Village-Door">{2} Go to door.</option>
+            <option loads="Scene_Bridge">{3} Leave town.</option>
+            <option loads="Scene_Death_Sleep">{4} Go back to sleep.</option>
+        </options>
+    </scene>
+    <scene name="Scene_Dragon" image="Scene_Dragon" audioClip="boss-fight">
+        <story>You're attacked by a White Dragon!</story>
+        <options>
+            <option loads="Scene_Death_Dragon_Attack">{1} Attack!</option>
+            <option loads="Scene_Tower">{2} Shield.</option>
+            <option loads="Scene_Death_Dragon_Run">{3} Run.</option>
+        </options>
+    </scene>
+</scenes>

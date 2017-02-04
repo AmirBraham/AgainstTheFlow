@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1000011726406670}
+  m_IsPrefabParent: 1
+--- !u!1 &1000011726406670
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012267853734}
+  - 114: {fileID: 114000011291194690}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012267853734
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011726406670}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.119023524, y: 9.02, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &114000011291194690
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011726406670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f741a8bce94bb432fb18e439cb9f2837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Obstacle: {fileID: 1000013329051650, guid: 07f7e5a1403184e8aa3728527dde3060, type: 2}
+  Pill: {fileID: 1000012549122522, guid: 1f1a22b4241264130be3a35d27b43c0c, type: 2}
+  xRight: 3
+  yRight: 11
+  xLeft: -3
+  yLeft: 11
+  Boolean: 0
+  Algae: {fileID: 0}
+  ob1m1: {fileID: 1000010711060528, guid: a708b009b6bb5401ea5771d54f2cc712, type: 2}
+  ob2m1: {fileID: 1000010479577100, guid: 45f10dc7330124dc597bc42506280f4e, type: 2}
+  ob3m1: {fileID: 1000013049702986, guid: aa6fc568826e64d6d9f86d0b15806b8a, type: 2}
+  ob1m2: {fileID: 1000011111057420, guid: 08d30a8e23aa84dceb5e6c293a960db4, type: 2}
+  ob2m2: {fileID: 1000011019428138, guid: c6ef5246f68674be3a9e3671ddd4c150, type: 2}
+  ob3m2: {fileID: 1000012765717590, guid: c82193e8469134a53b67b2decad7a0cc, type: 2}
+  ob1m3: {fileID: 1000010031188328, guid: 5a596f04451754a25b73c5cdfb420022, type: 2}
+  ob2m3: {fileID: 1000013621226800, guid: 26690ff91cb1043019458b5a05cf1ac6, type: 2}
+  ob3m3: {fileID: 1000010568977088, guid: 6e21789ea54f34fa1b2853803730364a, type: 2}
+  Creat1: {fileID: 0}
+  Creat2: {fileID: 0}
+  Creat3: {fileID: 0}
+  InstantiatedFuelCans: []
+  Creatures: []
+  World1: []
+  World2: []
+  World3: []
