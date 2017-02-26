@@ -120,7 +120,7 @@ public class SceneManagerP : MonoBehaviour {
         UI[1].transform.DOLocalMoveX(-764f, 1.2f);
         UI[7].transform.DOLocalMoveX(779f, 1.2f);
         UI[9].transform.DOLocalMoveX(-350f, 1.2f);
-        UI[15].transform.DOLocalMoveX(-2f, 1.2f);
+        UI[15].transform.DOLocalMoveX(-540f, 1.2f);
         UI[2].transform.DOLocalMoveY(5.5f, 1.2f);
 
 
