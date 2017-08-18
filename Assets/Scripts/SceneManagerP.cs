@@ -36,7 +36,8 @@ public class SceneManagerP : MonoBehaviour {
     public bool ClickedOptionsButton;
     void Start()
     {
-
+		Submarines.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedSub")*-buttonDistance,Submarines.anchoredPosition.y );
+		Accessories.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedAc")*-buttonDistance,Accessories.anchoredPosition.y );
 		distanceSub = new float[Subs.Length];
 		distanceAcces = new float[Acces.Length];
 		SubSum= Subs.Length;
@@ -48,6 +49,11 @@ public class SceneManagerP : MonoBehaviour {
     
 
     void Update () {
+		if(SelectState){
+			Selector.content = Submarines;
+		}else{
+			Selector.content = Accessories;
+		}
 
         for (int i=0; i < distanceSub.Length;i++){
 			distanceSub[i]=Mathf.Abs(Center.transform.position.x-Subs[i].transform.position.x);
@@ -68,28 +74,6 @@ public class SceneManagerP : MonoBehaviour {
 				MinAcces = i;
 			}
 		}
-		////////////////////
-		if(!Input.GetMouseButtonDown(0)||Input.touchCount == 0){
-			if (canSelect) {
-				if (SelectState) {
-					Selector.content = Submarines;
-
-					SmoothSelectSubs ();
-				} else {
-					Selector.content = Accessories;
-					SmoothSelectAc ();
-				}
-			} else {
-				Submarines.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedSub")*-buttonDistance,Submarines.anchoredPosition.y );
-				Accessories.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedAc")*-buttonDistance,Accessories.anchoredPosition.y );
-
-
-			}
-
-		}
-
-		
-
 
         if (fadera.GetComponent<SpriteRenderer>().color.a == 1)
         {
@@ -99,6 +83,16 @@ public class SceneManagerP : MonoBehaviour {
 
         	//UIStartTranslation();
         
+	}
+	public void endDrag(){
+		if (canSelect) {
+			if (SelectState) {
+				SmoothSelectSubs ();
+
+			} else {
+				SmoothSelectAc ();
+			}
+		}
 	}
 	public void BackButton(){
 		canSelect = false;
@@ -113,6 +107,8 @@ public class SceneManagerP : MonoBehaviour {
         UI[13].transform.DOLocalMoveX(1000f, 1.2f);
         UI[14].transform.DOLocalMoveX(-750f, 1.5f);
         UI[15].transform.DOLocalMoveX(1122f, 1.5f);
+		Submarines.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedSub")*-buttonDistance,Submarines.anchoredPosition.y );
+		Accessories.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedAc")*-buttonDistance,Accessories.anchoredPosition.y );
     }
     public void StartButton()
     {
@@ -169,7 +165,6 @@ public class SceneManagerP : MonoBehaviour {
     
     public void CaveMode()
     {
-        //Debug.Log("please work");
         //UI[0].transform.DOLocalMoveX(726f, 1.2f);
         CaveModeEnabled = true;
         if (GetTheFishBack.fadeBool == true)
@@ -243,12 +238,10 @@ public class SceneManagerP : MonoBehaviour {
     
 
 	void SmoothSelectSubs (){
-		float NewX=Mathf.Lerp(Submarines.anchoredPosition.x,MinSub*-buttonDistance,Time.deltaTime*12f);
-		Submarines.anchoredPosition = new Vector2 (NewX,Submarines.anchoredPosition.y);
+		Submarines.DOAnchorPos (new Vector2(MinSub*-buttonDistance,Submarines.anchoredPosition.y),0.5f,false);
 	}
 	void SmoothSelectAc (){
-		float NewX=Mathf.Lerp(Accessories.anchoredPosition.x,MinAcces*-buttonDistance,Time.deltaTime*12f);
-		Accessories.anchoredPosition = new Vector2 (NewX,Accessories.anchoredPosition.y);
+		Accessories.DOAnchorPos (new Vector2(MinAcces*-buttonDistance,Accessories.anchoredPosition.y),0.5f,false);
 	}
 
 
@@ -256,6 +249,8 @@ public class SceneManagerP : MonoBehaviour {
 
     
 	public void OnStateButtonClick(){
+		Submarines.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedSub")*-buttonDistance,Submarines.anchoredPosition.y );
+		Accessories.anchoredPosition = new Vector2 (PlayerPrefs.GetFloat("SelectedAc")*-buttonDistance,Accessories.anchoredPosition.y );
 		SelectState = !SelectState;	
 	}
     

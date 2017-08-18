@@ -40,7 +40,7 @@ public class FuelBehave : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D stay){
 		if (stay.gameObject.tag == "Obstacle")
         {
-			Debug.Log ("Stood");
+//			Debug.Log ("Stood");
 			gameObject.transform.Translate (new Vector3(0,2,0) , Space.World); 
 		}
 

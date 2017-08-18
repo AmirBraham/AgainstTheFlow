@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Ads : MonoBehaviour {
 
-    [SerializeField]
+/*    [SerializeField]
     string GameID = "1156219";
     public string zoneId;
     public GameObject Yes;
@@ -101,5 +101,5 @@ public class Ads : MonoBehaviour {
                 break;
         }
     }
-
+*/
 }

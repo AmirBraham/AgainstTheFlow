@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
     private float damageTime;
     private float lastDamage;
     public Image HealthSlider;
-    public GameObject background;
-    public SpriteRenderer backgroundRenderer;
     public Text HighScore;
     public static GameObject Player;
     public bool ClickedReplayButton;
@@ -35,17 +33,16 @@ public class GameManager : MonoBehaviour
     static public float Extrafuel;
     static public float collectedMoney = 0;
     static public float collectedMoneyThisRound = 0;
-    public string encHS;
-    public string decHS;
-    public string encHSC;
-    public string decHSC;
-    public bool HighScoreSaved;
+	private string encHS;
+	private string decHS;
+	private string encHSC;
+	private string decHSC;
+	private bool HighScoreSaved;
     public static bool ShrinkedSubmarine;
 
     // Use this for initialization
     void Awake()
     {
-        backgroundRenderer = background.GetComponent<SpriteRenderer>();
         fuel = 150;
         Extrafuel = fuel;
         damageTime = 0.1f;
@@ -90,7 +87,7 @@ public class GameManager : MonoBehaviour
         }
 
         ///////////
-        gameSpeed = Mathf.Clamp(2 * reference * Time.timeSinceLevelLoad, 3, 9.5f);
+		gameSpeed = Mathf.Clamp(Mathf.Log(2  * Time.timeSinceLevelLoad), 3, 9.5f);
         ////////////Damaging
 
 
@@ -196,7 +193,6 @@ public class GameManager : MonoBehaviour
                         string encS = Encrypt.EncryptString(scoreString);
                         PlayerPrefs.SetString("encHS", encS);
                     }
-                    Debug.Log("Saved in PlayPrefs " + PlayerPrefs.GetString("encHS") + " and the real High Score (Decrypted): " + "" + Decrypt.DecryptString(PlayerPrefs.GetString("encHS")));
                 }
                 if (HighScore != null)
                 {
@@ -229,7 +225,7 @@ public class GameManager : MonoBehaviour
                         string encSC = Encrypt.EncryptString(scoreString);
                         PlayerPrefs.SetString("encHSC", encSC);
                     }
-                    Debug.Log("Saved in PlayPrefs " + PlayerPrefs.GetString("encHSC") + " and the real High Score (Decrypted): " + "" + Decrypt.DecryptString(PlayerPrefs.GetString("encHSC")));
+                    
                 }
                 if (HighScore != null)
                 {
@@ -246,7 +242,7 @@ public class GameManager : MonoBehaviour
         collectedMoneyThisRound = collectedMoneyThisRound + collectedMoney;
         PlayerPrefs.SetFloat("Money", PlayerPrefs.GetFloat("Money") + collectedMoney);
         Extrafuel = fuel;
-        Debug.Log(PlayerPrefs.GetFloat("Money"));
+//        Debug.Log(PlayerPrefs.GetFloat("Money"));
     }
    void CaveMode()
     {
