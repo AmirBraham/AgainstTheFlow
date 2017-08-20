@@ -55,6 +55,8 @@ public class EggBehave : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D col){
 		if(col.gameObject.tag=="Obstacle"){
 			GameManager.fuel=0;
+            Debug.Log(col.gameObject.name);
+
 		}
 		if (col.gameObject.tag=="Malus"){
 			GameManager.fuel=0;
@@ -62,6 +64,7 @@ public class EggBehave : MonoBehaviour {
 		if(col.gameObject.tag=="Algae"){
 			GameManager.SlowDown=true;
 		}
+
 	}
 	//Trigger
 	void OnTriggerEnter2D(Collider2D trig){

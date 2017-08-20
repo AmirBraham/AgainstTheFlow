@@ -21,5 +21,8 @@ public class ObstacleEndBehave : MonoBehaviour {
 		if (trig.gameObject.tag=="Destroyer"){
 			Destroy(gameObject);
 		}
+
 	}
+
+
 }

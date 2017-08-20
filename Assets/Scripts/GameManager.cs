@@ -129,11 +129,14 @@ public class GameManager : MonoBehaviour
     }
     void ResetScale()
     {
-        if(Player.transform.localScale.x < 0.3f && Player.transform.localScale.y < 0.3)
-        {
-            Player.transform.localScale = Player.transform.localScale * (1.001f);
+        if(Player != null) {
+			if (Player.transform.localScale.x < 0.3f && Player.transform.localScale.y < 0.3)
+			{
+				Player.transform.localScale = Player.transform.localScale * (1.001f);
 
+			}
         }
+
 
     }
 
