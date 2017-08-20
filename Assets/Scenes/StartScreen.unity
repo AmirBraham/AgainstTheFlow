@@ -2194,7 +2194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Would you like to watch an ad for a 50 coins '
+  m_Text: "Earn 50 coins by watching an Ad ? \n"
 --- !u!222 &733999280
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2751,6 +2751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e59858e3c6d4797a851afe5d46640a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rect: {fileID: 0}
 --- !u!224 &945112656 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224000012306158958, guid: e477700d8f63e4a23b40789da9f77bb1,
@@ -4109,11 +4110,11 @@ Prefab:
     - target: {fileID: 114000012310376942, guid: b5156dfac54a10c42b0b0fca2b18aa23,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1000013873109812, guid: b5156dfac54a10c42b0b0fca2b18aa23, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114000012310376942, guid: b5156dfac54a10c42b0b0fca2b18aa23,
         type: 2}
@@ -4957,7 +4958,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 396012432}
-        m_MethodName: WantToSeeAd
+        m_MethodName: ShowRewardedAd
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

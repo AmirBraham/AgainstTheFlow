@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ShrinkIt : MonoBehaviour {
+public class ShrinkIt : MonoBehaviour
+{
 
     void Start()
     {
@@ -14,15 +15,15 @@ public class ShrinkIt : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Player" && GameManager.ShrinkedSubmarine == false)
-            {
-                col.gameObject.transform.localScale = col.gameObject.transform.localScale / (2f);
-            }
-
-
+        {
+            col.gameObject.transform.localScale = col.gameObject.transform.localScale / (2f);
         }
+
 
     }
 
+}
 
-    
+
+
 
